@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="/CSS/utils.css" />
+	<link rel="stylesheet" href="/CSS/styles.css" />
+	<link rel="shortcut icon" href="/images/link.png" type="image/x-icon" />
+
+	<title>Shorten - URL Shortner</title>
+	<meta name="description" content="Get short URL instant, use shorten and replace long URL to short link. A simple link but a powerful tool
+	to help you grow and protect your brand.">
+	<meta name="robots" content="index, follow">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="shortner - URL Shortner">
+	<meta property="og:description"
+		content="Get short URL instant, use shorten and replace long URL to short link. A simple link but a powerful tool
+		to help you grow and protect your brand.">
+	<meta property="og:image" content="/images/link.png">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:title" content="shortner - URL Shortner">
+	<meta property="twitter:description"
+		content="Get short URL instant, use shorten and replace long URL to short link. A simple link but a powerful tool
+		to help you grow and protect your brand.">
+	<meta property="twitter:image" content="/images/link.png">
+
+</head>
+
+<body>
+	<!-- <img src="images/link.png" alt="" height="100"/> -->
+	<header class="container">
+		<%- include('../partials/navbar') %>
+	</header>
+	<main>
+		<section id="home">
+			<div class="container flex">
+				<h2>
+					Keep it brief <br />
+					A <span>easier</span> way to <span>share links</span>
+				</h2>
+				<p>
+					A simple link but a powerful tool <br />
+					to help you grow and protect your brand.
+				</p>
+				<button>
+					<a href="javascript:void(0)">Get Started for Free</a>
+				</button>
+				<img src="/images/hero.svg" alt="" />
+			</div>
+		</section>
+
+		<section id="content-entry">
+			<div class="container">
+				<div class="row">
+					<form action="/" method="POST">
+						<input type="url" name="fullUrl" id="input-full-url" placeholder="Shorten your link" width="100"
+							required>
+						<button type="submit" class="getShortURL" width="100">
+							SHORTEN
+						</button>
+					</form>
+				</div>
+				<div class="shortURLS">
+					<% if (shortURL && fullURL) { %>
+						<div class="wrapper flex">
+							<div class="input-url">
+								<%= fullURL %>
+							</div>
+							<div class="left flex">
+								<div class="shorturl" id="short_url">
+									<%= shortURL %>
+								</div>
+								<button class="copy" id="copy_btn" onclick="CopyToClipboard('short_url');return false;">
+									Copy
+								</button>
+							</div>
+						</div>
+						<% } else if (isUrl===false) { %>
+							<div class="wrapper" style="
+								text-align: center;
+								font-size: 1.2rem;
+								background: #ffc107;
+								border-radius: 6px;
+							">
+								Unable to shorten this link. It is not a valid url.
+							</div>
+							<% } %>
+				</div>
+				<% if (shortURL && fullURL) { %>
+					<h3 style="text-align: center">
+						This link will be closed after 24 hours
+					</h3>
+					<% } %>
+			</div>
+		</section>
+
+		<section id="advantages">
+			<div class="container">
+				<div class="headings text-center">
+					<h1>One short link, infinite possibilities</h1>
+					<div class="subheading">
+						<p>
+							A short is link is a powerful marketing tool
+							when you use it carefully. It is not just a link
+							but a medium between your customer and their
+							destination. A short link allows to connect so
+							much data about your customers and their
+							behaviours.
+						</p>
+					</div>
+				</div>
+				<div class="content">
+					<div class="wrapper text-center">
+						<img src="images/like.png" alt="" />
+						<h2>Easy</h2>
+						<p>
+							Shortner is easy and fast and effective way to
+							shorten your long urls
+						</p>
+					</div>
+					<div class="wrapper text-center">
+						<img src="images/link.png" alt="" />
+						<h2>Shortened</h2>
+						<p>
+							ANy link can be Shortened with our powerful
+							algorithms
+						</p>
+					</div>
+					<div class="wrapper text-center">
+						<img src="images/secure.png" alt="" />
+						<h2>Secure</h2>
+						<p>
+							With high level encryption your urls are always
+							safe and secure with https
+						</p>
+					</div>
+					<div class="wrapper text-center">
+						<img src="images/stats.png" alt="" />
+						<h2>Statistics</h2>
+						<p>
+							You can see stats on how many users have cliked
+							your Shortened urls.
+						</p>
+					</div>
+					<div class="wrapper text-center">
+						<img src="images/reliable.png" alt="" />
+						<h2>Reliable</h2>
+						<p>
+							We delete any link which is a potential threat
+							to malware or viruses
+						</p>
+					</div>
+					<div class="wrapper text-center">
+						<img src="images/devices.png" alt="" />
+						<h2>Integrity</h2>
+						<p>
+							integrates with nearly every social media and
+							digital marketing tool, saving you time and
+							hassle.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="tryIt">
+			<h1>Boost your links today</h1>
+			<button>Get Started</button>
+		</section>
+
+		<footer>
+			<div class="flex">
+				<div class="row flex">
+					<div class="footer__one">Shorten</div>
+					<div class="footer__two">
+						<ul>
+							<li><span>Features</span></li>
+							<li class="space">
+								<a href="javascript:void(0)" aria-label="Shorten Link">Link Shortening</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)" aria-label="Branded links">Branded Links</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)" aria-label="Analytics">Analytics</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__three">
+						<ul>
+							<li><span>Resources</span></li>
+							<li class="space">
+								<a href="javascript:void(0)" aria-label="Resources">Blog</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)" aria-label="Developers">Developers</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)" aria-label="Support">Support</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__four">
+						<ul>
+							<li><span>Company</span></li>
+							<li class="space">
+								<a href="javascript:void(0)" aria-label="About">About</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)" aria-label="Team">Our Team
+								</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)" aria-label="Careers">Careers
+								</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)" aria-label="Contact">Contact
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__five">
+						<a href="#" title="icons1" aria-label="fb"><i class="fab fa-facebook-square"> </i></a>
+						<a href="#" title="icons2" aria-label="twitter"><i class="fab fa-twitter"> </i></a>
+						<a href="#" title="icons3" aria-label="pinterest"><i class="fab fa-pinterest"> </i></a>
+						<a href="#" title="icons4" aria-label="instagram"><i class="fab fa-instagram"> </i></a>
+					</div>
+				</div>
+			</div>
+			<div class="credit">
+				<div class="me">
+					Made by <span>Parshuram Nikam</span> - <a href="https://github.com/ParshuramNikam/Shortner"
+						style="text-decoration: underline;">Github Code</a>
+				</div>
+				<div class="imageIcons">
+					<div>
+						Images credit :
+						<a href="https://storyset.com/" target="_blank">Storyset
+						</a>
+					</div>
+					<div>
+						Icons credit :
+						<a href="https://www.flaticon.com/" target="_blank">Flaticons
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</main>
+
+	<script src="/script.js"></script>
+</body>
+
+</html>

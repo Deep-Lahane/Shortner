@@ -14,7 +14,7 @@
     "tiny url",
     "url"
   ],
-  "author": "Parhuram Nikam <parshunikam0612@gmail.com>",
+  "author": "Deep Lahane <deeplahane15@gmail.com>",
   "license": "ISC",
   "nodemonConfig": {
     "ext": "ejs,js,html,css"
